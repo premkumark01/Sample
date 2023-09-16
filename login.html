@@ -62,11 +62,11 @@
           .then(data => {
             console.log(data)
             if(data.Status && data.Status === 'Success'){
-                window.location.assign("index.html");
+                //window.location.assign("index.html");
             } else {
-                let errorMessage = document.querySelector("#errorMessage");
-                document.getElementById("errorMessage").style.display = "block";
-                document.getElementById("errorMessage").innerHTML = data.message;
+                // let errorMessage = document.querySelector("#errorMessage");
+                // document.getElementById("errorMessage").style.display = "block";
+                // document.getElementById("errorMessage").innerHTML = data.message;
             }
           })
           .catch(error => console.log(error));
