@@ -24,7 +24,7 @@
     <ul>
       <li id="home"><a href="/">Home</a></li>
       <li id="profile"><a href="/profile.html">Profile</a></li>
-      <li id="logout"><a href="/index.html">Logout</a></li>
+      <li id="logout"><a href="#">Logout</a></li>
       <li id="login"><a href="/login.html">Login</a></li>
       <li id="register"><a href="/register.html">Register</a></li>
     </ul>
@@ -45,7 +45,7 @@
   <script>
 
     let logout = () => {
-      fetch('http://localhost:8080/logout', {
+      fetch('http://16.171.161.175/logout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -55,9 +55,7 @@
         .then(data => {
           console.log(data)
           if (data.Status && data.Status === 'Success') {
-            window.location.assign("index.html");
-            document.getElementById("profile").style.display = "none";
-            document.getElementById("logout").style.display = "none";
+            window.location.assign("login.html");
           }
         })
         .catch(error => console.log(error));
@@ -68,7 +66,7 @@
 
 
     let isUserLoggedIn = () => {
-      fetch('http://localhost:8080/isLoggedIn', {
+      fetch('http://16.171.161.175/isLoggedIn', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
